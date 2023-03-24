@@ -6,7 +6,9 @@ game_view::game_view(game_model& model) : model(model) {
 
 void game_view::update()
 {
-    system("cls");
-    std::cout << "Console clicker!" << std::endl;
-    std::cout << "Points: " << this->model.get_points() << std::endl;
+  system("cls");
+  cout << "Console clicker!" << std::endl;
+  cout << "Points: " << this->model.get_points() << std::endl;
+  cout << "level: " << this->model.get_level() << endl;
+
 }

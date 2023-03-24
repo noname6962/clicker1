@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <conio.h>
+#include <cmath>
 #include "game_model.h"
 #include "game_view.h"
 

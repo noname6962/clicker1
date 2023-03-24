@@ -9,12 +9,24 @@ game_controller::game_controller(game_model& model, game_view& view) : model(mod
 
 
 void game_controller::launch() {
-    this->view.update();
     int key;
-    do {
+
+    this->model.start();
+    this->view.update();
+
+    do
+    {
         key = _getch();
+
         if (key == 13) {
-            this->model.add_points(1);
+
+            if (this->model.get_points() >= pow(this->model.get_level()*3, 2))
+            {
+                this->model.add_level();
+                this->model.reset_points();
+            }
+
+            this->model.add_points(this->model.get_level());
             this->view.update();
         }
     }
