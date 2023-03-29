@@ -24,10 +24,18 @@ void game_controller::launch() {
             {
                 this->model.add_level();
                 this->model.reset_points();
+                this->view.update();
             }
 
-            this->model.add_points(this->model.get_level());
+            this->model.add_points(this->model.get_multiplier()*this->model.get_level());
             this->view.update();
+        }
+        else if (key == 49 and this->model.get_points() >= 1000)
+        {
+            this->model.mod_multiplier(5);
+            this->model.shop(1000);
+            this->view.update();
+         
         }
     }
     while (key != 27);

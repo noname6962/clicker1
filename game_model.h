@@ -17,11 +17,15 @@ public:
     void reset_points();
     int get_level();
     void add_level();
+    void mod_multiplier(int m);
+    int get_multiplier();
+    void shop(int price);
 
 private:
 
     int points;
     int level;
+    int multiplier;
 };
 
 

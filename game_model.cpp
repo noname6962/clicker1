@@ -8,6 +8,7 @@ void game_model::start()
 {
     this->points = 1;
     this->level = 1;
+    this->multiplier = 1;
 }
 
 int game_model::get_points() {
@@ -30,4 +31,19 @@ int game_model::get_level()
 void game_model::add_level()
 {
     this->level += 1;
+}
+
+void game_model::mod_multiplier(int m)
+{
+    this->multiplier = this->multiplier*m;
+}
+
+int game_model::get_multiplier()
+{
+    return this->multiplier;
+}
+
+void game_model::shop(int price)
+{
+    this->points = this->points - price;
 }
